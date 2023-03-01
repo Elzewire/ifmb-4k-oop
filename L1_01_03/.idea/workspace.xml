@@ -28,7 +28,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.Vector2D">
+  <component name="RunManager" selected="Application.Triangle">
     <configuration name="MyClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MyClass" />
       <module name="L1_01_03" />
@@ -37,14 +37,21 @@
       </method>
     </configuration>
     <configuration name="Polygon2D" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Polygon2D" />
+      <option name="MAIN_CLASS_NAME" value="polygons.Polygon2D" />
+      <module name="L1_01_03" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Triangle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="polygons.impl.Triangle" />
       <module name="L1_01_03" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="Vector2D" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Vector2D" />
+      <option name="MAIN_CLASS_NAME" value="math.Vector2D" />
       <module name="L1_01_03" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -52,6 +59,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Triangle" />
         <item itemvalue="Application.Vector2D" />
         <item itemvalue="Application.Polygon2D" />
         <item itemvalue="Application.MyClass" />

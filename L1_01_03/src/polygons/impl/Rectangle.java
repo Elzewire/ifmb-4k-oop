@@ -1,4 +1,9 @@
-public class Rectangle extends Polygon2D{
+package polygons.impl;
+
+import math.Vector2D;
+import polygons.Polygon2D;
+
+public class Rectangle extends Polygon2D {
 
     double width;
     double height;

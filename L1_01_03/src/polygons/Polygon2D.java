@@ -1,6 +1,11 @@
+package polygons;
+
+import com.sun.tools.javac.Main;
+import math.Vector2D;
+
 public abstract class Polygon2D {
 
-    Vector2D [] vertices;
+    public Vector2D[] vertices;
 
     public abstract double area();
 
