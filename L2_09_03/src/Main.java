@@ -2,19 +2,22 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        User u1 = new User("login", "1234");
-        User u2 = new User("login", "1234");
-
-        System.out.println(u1);
-        System.out.println(u2);
+        User u1 = new User("user1", "1234");
+        User u2 = new User("user2", "4321");
 
         u1.addFriend(u2);
 
-        Post p1 = new Post("It's fine.", u1);
-        Post p2 = new Post("Hello, world!", u2);
+        Post p1 = u1.createPost("It's fine.");
+        Post p2 = u2.createPost("Hello, world!");
 
-        Comment c1 = new Comment("It's not.", p1, u1);
-        Comment c2 = new Comment("Hello!", p2, u1);
+        p1.comment("It's not.", u1);
+        p2.comment("Hello!", u1);
 
+        p1.like(u1);
+        p1.like(u2);
+
+        System.out.println(u1.getPosts());
+        System.out.println(u1.getComments());
+        System.out.println(u1.getLikes());
     }
 }

@@ -9,6 +9,11 @@ public class Comment {
         this.author = author;
     }
 
+    @Override
+    public String toString() {
+        return author + ": " + text + " @" + post.getText();
+    }
+
     public String getText() {
         return text;
     }

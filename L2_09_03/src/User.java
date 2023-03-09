@@ -9,11 +9,17 @@ public class User {
     private Date birthdate;
 
     private List<User> friends;
+    private List<Post> posts;
+    private List<Comment> comments;
+    private List<Like> likes;
 
     public User(String login, String pwd) {
         this.login = login;
         this.pwd = pwd;
         friends = new ArrayList<>();
+        posts = new ArrayList<>();
+        comments = new ArrayList<>();
+        likes = new ArrayList<>();
     }
 
     public boolean checkLogin(String login, String pwd) {
@@ -25,6 +31,17 @@ public class User {
             friends.add(friend);
             friend.addFriend(this);
         }
+    }
+
+    public Post createPost(String text) {
+        Post p = new Post(text, this);
+        posts.add(p);
+        return p;
+    }
+
+    @Override
+    public String toString() {
+        return login;
     }
 
     public String getLogin() {
@@ -57,5 +74,29 @@ public class User {
 
     public void setFriends(List<User> friends) {
         this.friends = friends;
+    }
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
+
+    public List<Like> getLikes() {
+        return likes;
+    }
+
+    public void setLikes(List<Like> likes) {
+        this.likes = likes;
     }
 }

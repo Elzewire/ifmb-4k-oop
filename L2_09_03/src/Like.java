@@ -7,6 +7,11 @@ public class Like {
         this.author = author;
     }
 
+    @Override
+    public String toString() {
+        return author + " liked @" + post.getText();
+    }
+
     public Post getPost() {
         return post;
     }
