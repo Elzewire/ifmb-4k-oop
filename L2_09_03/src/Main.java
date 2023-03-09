@@ -3,7 +3,10 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         User u1 = new User("login", "1234");
-        User u2 = new User("login2", "4321");
+        User u2 = new User("login", "1234");
+
+        System.out.println(u1);
+        System.out.println(u2);
 
         u1.addFriend(u2);
 
