@@ -12,6 +12,7 @@ public class User {
     private List<Post> posts;
     private List<Comment> comments;
     private List<Like> likes;
+    private List<Group> groups;
 
     public User(String login, String pwd) {
         this.login = login;
@@ -20,6 +21,18 @@ public class User {
         posts = new ArrayList<>();
         comments = new ArrayList<>();
         likes = new ArrayList<>();
+        groups = new ArrayList<>();
+    }
+
+    public void notify(String text, Group group) {
+        System.out.println(login + ": notification from group " + group.getName() + text);
+    }
+
+    public Group createGroup(String name) {
+        Group g = new Group(name);
+        g.join(this);
+        groups.add(g);
+        return g;
     }
 
     public boolean checkLogin(String login, String pwd) {
@@ -98,5 +111,13 @@ public class User {
 
     public void setLikes(List<Like> likes) {
         this.likes = likes;
+    }
+
+    public List<Group> getGroups() {
+        return groups;
+    }
+
+    public void setGroups(List<Group> groups) {
+        this.groups = groups;
     }
 }

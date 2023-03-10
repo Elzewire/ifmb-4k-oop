@@ -19,5 +19,13 @@ public class Main {
         System.out.println(u1.getPosts());
         System.out.println(u1.getComments());
         System.out.println(u1.getLikes());
+
+        Group g = u1.createGroup("F.R.I.E.N.D.S.");
+        g.join(u2);
+
+        System.out.println(g.getUsers());
+        System.out.println(u1.getGroups());
+
+        g.notify("Hello everyone!");
     }
 }
