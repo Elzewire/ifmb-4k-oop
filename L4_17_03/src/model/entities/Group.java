@@ -4,13 +4,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Group {
+
+/*    private static long IDCount = 0;
+
+    private static long getIDCount() {
+        return IDCount++;
+    }*/
+
     private String name;
     private List<User> users;
+    private long ID;
 
     public Group(String name) {
         this.name = name;
+        //this.ID = getIDCount();
         users = new ArrayList<>();
     }
+
+/*    public Group(String name, long ID) {
+        this.name = name;
+        this.ID = ID;
+        users = new ArrayList<>();
+    }*/
 
     public String getName() {
         return name;
@@ -36,5 +51,13 @@ public class Group {
         for (int i = 0; i < users.size(); i++) {
             users.get(i).notify(text, this);
         }
+    }
+
+    public long getID() {
+        return ID;
+    }
+
+    public void setID(long ID) {
+        this.ID = ID;
     }
 }

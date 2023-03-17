@@ -9,8 +9,11 @@ public class UserService implements Service {
 
     private UserDAO userDAO;
 
+    public UserService(UserDAO userDAO) {
+        this.userDAO = userDAO;
+    }
 
-/*    public Group createGroup(String name) {
+    /*    public Group createGroup(String name) {
         Group g = new Group(name);
         g.join(this);
         groups.add(g);
@@ -22,6 +25,13 @@ public class UserService implements Service {
         if (user != null && user.checkPwd(pwd)) {
             SessionSingleton.getSession().setUser(user);
             return true;
+        }
+        return false;
+    }
+
+    public boolean register(String login, String pwd) {
+        if (userDAO.getByUsername(login) == null) {
+            return userDAO.save(new User(login, pwd));
         }
         return false;
     }

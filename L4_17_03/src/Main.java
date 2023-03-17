@@ -1,33 +1,33 @@
-import model.entities.Group;
-import model.entities.Post;
+import model.DAO.*;
 import model.entities.User;
+import service.PostService;
+import service.SessionSingleton;
+import service.UserService;
+
+import javax.sound.midi.Soundbank;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        User u1 = new User("user1", "1234");
-        User u2 = new User("user2", "4321");
 
-        u1.addFriend(u2);
+        // Create DAO
+        UserDAO userDAO = new FileUserDAO("src/resources/users.txt");
+        PostDAO postDAO = new PostDAO(new ArrayList<>());
+        CommentDAO commentDAO = new CommentDAO(new ArrayList<>());
+        LikeDAO likeDAO = new LikeDAO(new ArrayList<>());
 
-        Post p1 = u1.createPost("It's fine.");
-        Post p2 = u2.createPost("Hello, world!");
+        // Create services
+        UserService userService = new UserService(userDAO);
+        PostService postService = new PostService(postDAO, commentDAO, likeDAO);
 
-        p1.comment("It's not.", u1);
-        p2.comment("Hello!", u1);
+        Scanner sc = new Scanner(System.in);
 
-        p1.like(u1);
-        p1.like(u2);
+        String login = sc.nextLine();
+        String pwd = sc.nextLine();
 
-        System.out.println(u1.getPosts());
-        System.out.println(u1.getComments());
-        System.out.println(u1.getLikes());
-
-        Group g = u1.createGroup("F.R.I.E.N.D.S.");
-        g.join(u2);
-
-        System.out.println(g.getUsers());
-        System.out.println(u1.getGroups());
-
-        g.notify("Hello everyone!");
+        System.out.println(userService.register(login, pwd));
+        //System.out.println(userService.auth(login, pwd));
     }
 }
