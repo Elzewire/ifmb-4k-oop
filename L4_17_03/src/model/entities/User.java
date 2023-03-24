@@ -5,7 +5,7 @@ import java.sql.Date;
 import java.util.List;
 
 public class User {
-    public String login;
+    private String login;
     private String pwd;
     private String fio;
     private Date birthdate;
