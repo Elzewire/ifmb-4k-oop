@@ -1,16 +1,15 @@
-package model.DAO;
+package model.DAO.impl.list;
 
 import model.entities.Comment;
-import model.entities.Post;
 import model.entities.User;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CommentDAO {
+public class ListCommentDAO {
     private List<Comment> comments;
 
-    public CommentDAO(List<Comment> comments) {
+    public ListCommentDAO(List<Comment> comments) {
         this.comments = comments;
     }
 

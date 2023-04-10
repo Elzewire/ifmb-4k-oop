@@ -31,7 +31,7 @@ public class UserService implements Service {
 
     public boolean register(String login, String pwd) {
         if (userDAO.getByUsername(login) == null) {
-            return userDAO.save(new User(login, pwd));
+            return userDAO.create(new User(login, pwd));
         }
         return false;
     }

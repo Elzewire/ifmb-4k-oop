@@ -5,6 +5,7 @@ import java.sql.Date;
 import java.util.List;
 
 public class User {
+    private int id;
     private String login;
     private String pwd;
     private String fio;
@@ -17,6 +18,18 @@ public class User {
     private List<Group> groups;
 
     public User(String login, String pwd) {
+        this.login = login;
+        this.pwd = pwd;
+        id = 0;
+        friends = new ArrayList<>();
+        posts = new ArrayList<>();
+        comments = new ArrayList<>();
+        likes = new ArrayList<>();
+        groups = new ArrayList<>();
+    }
+
+    public User(int id, String login, String pwd) {
+        this.id = id;
         this.login = login;
         this.pwd = pwd;
         friends = new ArrayList<>();

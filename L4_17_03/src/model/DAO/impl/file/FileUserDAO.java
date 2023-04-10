@@ -1,5 +1,6 @@
-package model.DAO;
+package model.DAO.impl.file;
 
+import model.DAO.UserDAO;
 import model.entities.User;
 
 import java.io.File;
@@ -49,7 +50,7 @@ public class FileUserDAO implements UserDAO {
     }
 
     @Override
-    public boolean save(User user) {
+    public boolean create(User user) {
         try {
             FileWriter fw = new FileWriter(path);
             for (User u : users) {
@@ -62,5 +63,15 @@ public class FileUserDAO implements UserDAO {
         } catch (IOException e) {
             return false;
         }
+    }
+
+    @Override
+    public boolean update(User user) {
+        return false;
+    }
+
+    @Override
+    public boolean delete(User user) {
+        return false;
     }
 }

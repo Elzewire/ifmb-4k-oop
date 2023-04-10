@@ -1,8 +1,8 @@
 package service;
 
-import model.DAO.CommentDAO;
-import model.DAO.LikeDAO;
-import model.DAO.PostDAO;
+import model.DAO.impl.list.ListCommentDAO;
+import model.DAO.impl.list.ListLikeDAO;
+import model.DAO.impl.list.ListPostDAO;
 import model.entities.Comment;
 import model.entities.Like;
 import model.entities.Post;
@@ -10,11 +10,11 @@ import model.entities.User;
 
 public class PostService implements Service {
 
-    private PostDAO postDAO;
-    private CommentDAO commentDAO;
-    private LikeDAO likeDAO;
+    private ListPostDAO postDAO;
+    private ListCommentDAO commentDAO;
+    private ListLikeDAO likeDAO;
 
-    public PostService(PostDAO postDAO, CommentDAO commentDAO, LikeDAO likeDAO) {
+    public PostService(ListPostDAO postDAO, ListCommentDAO commentDAO, ListLikeDAO likeDAO) {
         this.postDAO = postDAO;
         this.commentDAO = commentDAO;
         this.likeDAO = likeDAO;

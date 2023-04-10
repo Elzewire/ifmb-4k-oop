@@ -1,4 +1,4 @@
-package model.DAO;
+package model.DAO.impl.list;
 
 import model.entities.Post;
 import model.entities.User;
@@ -6,11 +6,11 @@ import model.entities.User;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PostDAO {
+public class ListPostDAO {
 
     private List<Post> posts;
 
-    public PostDAO(List<Post> posts) {
+    public ListPostDAO(List<Post> posts) {
         this.posts = posts;
     }
 
