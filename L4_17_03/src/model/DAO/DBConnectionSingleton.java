@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DBConnectionSingleton {
     static Connection conn;
-    static String url = "jdbc:postgresql://localhost:5433/project";
+    static String url = "jdbc:postgresql://localhost:5432/project";
     static String username = "postgres";
     static String password = "postgres";
 

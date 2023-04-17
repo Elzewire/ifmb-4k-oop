@@ -3,12 +3,13 @@ package model.entities;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Mapper {
 
     public static User mapUser(ResultSet rs) {
         try {
-            rs.next();
             int id = rs.getInt("id");
             String username = rs.getString("username");
             String pwd = rs.getString("pwd");
@@ -25,6 +26,14 @@ public class Mapper {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public static List<User> mapUsers(ResultSet rs) throws SQLException {
+        List<User> users = new ArrayList<>();
+        while (rs.next()) {
+            users.add(Mapper.mapUser(rs));
+        }
+        return users;
     }
 
 }

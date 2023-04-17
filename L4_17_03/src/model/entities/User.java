@@ -5,6 +5,7 @@ import java.sql.Date;
 import java.util.List;
 
 public class User {
+
     private int id;
     private String login;
     private String pwd;
@@ -118,5 +119,13 @@ public class User {
 
     public String getPwd() {
         return pwd;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

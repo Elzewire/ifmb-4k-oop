@@ -50,6 +50,11 @@ public class FileUserDAO implements UserDAO {
     }
 
     @Override
+    public User getByID(int id) {
+        return null;
+    }
+
+    @Override
     public boolean create(User user) {
         try {
             FileWriter fw = new FileWriter(path);
